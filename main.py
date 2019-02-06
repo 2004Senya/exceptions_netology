@@ -2,40 +2,48 @@ text = input()
 
 text_ar = text.split(' ')
 
-if (text_ar[0] == '+'):
+def plus(text):
     try:
-        try:
-            print(text_ar[1], text_ar[0], text_ar[2], "=", int(text_ar[1]) + int(text_ar[2]))
-        except IndexError:
-            print("Insufficient number of arguments passed")
+        print(text[1], text[0], text[2], "=", int(text[1]) + int(text[2]))
+    except IndexError:
+        print("Insufficient number of arguments passed")
     except ValueError:
         print("One of the values was passed incorrectly")
 
-if (text_ar[0] == '-'):
+def mines(text):
     try:
-        try:
-            print(text_ar[1], text_ar[0], text_ar[2], "=", int(text_ar[1]) - int(text_ar[2]))
-        except IndexError:
-            print("Insufficient number of arguments passed")
-    except ValueError:
-        print("One of the values was passed incorrectly")
-if (text_ar[0] == '*'):
-    try:
-        try:
-            print(text_ar[1], text_ar[0], text_ar[2], "=", int(text_ar[1]) * int(text_ar[2]))
-        except IndexError:
-            print("Insufficient number of arguments passed")
+        print(text[1], text[0], text[2], "=", int(text[1]) - int(text[2]))
+    except IndexError:
+        print("Insufficient number of arguments passed")
     except ValueError:
         print("One of the values was passed incorrectly")
 
-if (text_ar[0] == '/'):
+def multiply(text):    
     try:
-        try:
-            try:
-                print(text_ar[1], text_ar[0], text_ar[2], "=", int(text_ar[1]) / int(text_ar[2])) 
-            except IndexError:
-                print("Insufficient number of arguments passed")
-        except ValueError:
-            print("One of the values was passed incorrectly")
+        print(text[1], text[0], text[2], "=", int(text[1]) * int(text[2]))
+    except IndexError:
+        print("Insufficient number of arguments passed")
+    except ValueError:
+        print("One of the values was passed incorrectly")
+
+def divide(text):
+    try:
+        print(text[1], text[0], text[2], "=", int(text[1]) / int(text[2])) 
+    except IndexError:
+        print("Insufficient number of arguments passed")
+    except ValueError:
+        print("One of the values was passed incorrectly")
     except ZeroDivisionError:
-        print(text_ar[1], text_ar[0], text_ar[2], "= 0")
+        print(text[1], text[0], text[2], "= 0")
+
+if (text_ar[0] == '+'):
+    plus(text_ar)
+    
+if (text_ar[0] == '-'):
+    mines(text_ar)
+    
+if (text_ar[0] == '*'):
+    multiply(text_ar)
+    
+if (text_ar[0] == '/'):
+    divide(text_ar)
